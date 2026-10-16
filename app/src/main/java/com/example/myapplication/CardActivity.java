@@ -21,20 +21,18 @@ public class CardActivity extends AppCompatActivity {
         TextView tvPhone = findViewById(R.id.tvPhone);
         TextView tvSite = findViewById(R.id.tvSite);
 
-        // קבלת הנתונים (השתמשנו בקבועים שהגדרנו ב-MainActivity)
         Intent intent = getIntent();
         String name = intent.getStringExtra(MainActivity.KEY_NAME);
         String job = intent.getStringExtra(MainActivity.KEY_JOB);
         String phone = intent.getStringExtra(MainActivity.KEY_PHONE);
         String site = intent.getStringExtra(MainActivity.KEY_SITE);
 
-        // הצגת הנתונים
         tvName.setText(name);
         tvJob.setText(job);
         tvPhone.setText(phone);
         tvSite.setText(site);
 
-        // כפתור חיוג (מסר מרומז)
+
         findViewById(R.id.btnDial).setOnClickListener(v -> {
             try {
                 Intent dial = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
@@ -44,7 +42,7 @@ public class CardActivity extends AppCompatActivity {
             }
         });
 
-        // כפתור דפדפן (מסר מרומז)
+
         findViewById(R.id.btnWeb).setOnClickListener(v -> {
             try {
                 String finalSite = site;
@@ -58,7 +56,6 @@ public class CardActivity extends AppCompatActivity {
             }
         });
 
-        // כפתור שיתוף (מסר מרומז)
         findViewById(R.id.btnShare).setOnClickListener(v -> {
             try {
                 Intent share = new Intent(Intent.ACTION_SEND);
@@ -70,7 +67,6 @@ public class CardActivity extends AppCompatActivity {
             }
         });
 
-        // כפתור חזרה
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
     }
 }
