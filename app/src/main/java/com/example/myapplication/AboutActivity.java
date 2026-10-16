@@ -1,4 +1,4 @@
-package com.example.myapplication; // ודא שזה תואם לשם החבילה שלך
+package com.example.myapplication;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
